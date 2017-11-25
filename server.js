@@ -12,20 +12,28 @@ hbs.registerHelper('getCurrentYear', () => {
 });
 
 app.set('view_engine','hbs');
-app.get('/',(req,res) => {
 
+
+app.get('/',(req,res) => {
   //res.send('<h1>hello express</h1>');
   res.render('home.hbs', {
     pageTitle:'Home Page',
-
     welcomeMsg:'Welcome to home page'
   });
 });
 
+app.get('/projects',(req,res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects',
+    welcomeMsg:'These are my projects'
+  });
+});
+
+
 app.get('/about',(req,res) => {
   res.render('about.hbs',{
     pageTitle: 'about page',
-
+    welcomeMsg:'something about this page'
   });
 });
 
